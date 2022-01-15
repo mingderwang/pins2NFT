@@ -6,6 +6,7 @@ import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
 import "hardhat-gas-reporter";
 import "solidity-coverage";
+import "@openzeppelin/hardhat-upgrades";
 
 dotenv.config();
 const defaultNetwork = "polygon_testnet";
@@ -25,7 +26,7 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 
 const config: HardhatUserConfig = {
   defaultNetwork, 
-  solidity: "0.8.4",
+  solidity: "0.8.2",
   networks: {
     ropsten: {
       url: process.env.ROPSTEN_URL || "",
